@@ -3,6 +3,9 @@ uuid = "c36bbd6a-dc02-459a-8e07-dbaf74a2df2c"
 authors = ["dhtan <dinghangtan@gmail.com> and contributors"]
 version = "1.0.0-DEV"
 
+[deps]
+Gridap = "56d4f2e9-7ea1-5844-9cf6-b9c51ca7ce8e"
+
 [compat]
 julia = "1.6.7"
 

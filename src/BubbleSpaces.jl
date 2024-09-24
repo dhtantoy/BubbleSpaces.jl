@@ -6,11 +6,12 @@ using Gridap.ReferenceFEs
 using Gridap.Polynomials
 using Gridap.Fields
 using Gridap.Helpers
-using Gridap.Polynomials: Monomial
+using Gridap.MultiField
 
 export BubbleRefFE
 
 include("BubbleMonomialBase.jl")
 include("BubbleReference.jl")
+include("AdditionBasis.jl")
 
 end

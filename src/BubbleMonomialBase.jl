@@ -1,4 +1,4 @@
-struct BubbleMonomialBasis{T, eT} <: AbstractVector{Monomial}
+struct BubbleMonomialBasis{T, eT} <: AbstractVector{Polynomials.Monomial}
     monomials::MonomialBasis{2, T}
     vec::Vector{eT}
     function BubbleMonomialBasis(T::Type) 
@@ -14,7 +14,7 @@ struct BubbleMonomialBasis{T, eT} <: AbstractVector{Monomial}
     end
 end
 Base.size(::BubbleMonomialBasis{T}) where T = (num_components(T),)
-Base.getindex(::BubbleMonomialBasis, ::Integer) = Monomial()
+Base.getindex(::BubbleMonomialBasis, ::Integer) = Polynomials.Monomial()
 Base.IndexStyle(::BubbleMonomialBasis) = IndexLinear()
 Polynomials.get_order(::BubbleMonomialBasis) = 0
 ReferenceFEs.return_type(::BubbleMonomialBasis{T}) where T = T

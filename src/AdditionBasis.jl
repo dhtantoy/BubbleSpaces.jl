@@ -13,3 +13,6 @@ end
 for op in (:gradient,)
     @eval Gridap.$op(a::AdditionBasis) = $op(a.dv1) + $op(a.dv2)
 end
+for op in (:adjoint,)
+    @eval Base.$op(a::AdditionBasis) = $op(a.dv1) + $op(a.dv2)
+end

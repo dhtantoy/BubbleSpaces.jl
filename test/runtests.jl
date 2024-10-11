@@ -25,7 +25,7 @@ P = TrialFESpace(Q)
 Xb = MultiFieldFESpace([U_trial, B_trial, P])
 Yb = MultiFieldFESpace([U_test, B_test, Q])
 
-@inline a(u, v) = ∫(∇(u)⊙∇(v)*μ)dx 
+@inline a(u, v) = ∫((∇ ⊗ u) ⊙ (∇ ⊗ v)*μ)dx 
 @inline b(u, p) = ∫(∇⋅u * p)dx
 
 @inline A((u, p), (v, q)) = a(u, v) + b(v, p) + b(u, q)

@@ -10,7 +10,7 @@ for op in (:inner, :dot, :*, :outer)
     @eval Gridap.$op(f, b::AdditionBasis) = $op(f, b.dv1) + $op(f, b.dv2) 
     @eval Gridap.$op(a::AdditionBasis, b::AdditionBasis) = $op(a.dv1, b) + $op(a.dv2, b)
 end
-for op in (:gradient,)
+for op in (:gradient, :symmetric_gradient)
     @eval Gridap.$op(a::AdditionBasis) = $op(a.dv1) + $op(a.dv2)
 end
 for op in (:adjoint,)
